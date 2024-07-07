@@ -72,7 +72,7 @@
 {#if !isLoggedIn}
  <div class="formWrapper">  
     <Card class="mx-a">
-                <form method="POST" id="signup" action="?/login"
+            <form method="POST" id="signup" action="?/login"
                 use:enhance={({ formElement, formData, action, cancel, submitter }) => {
                     return async ({ result, update }) => {
                         console.log(result);
@@ -108,19 +108,24 @@
                         </Helper> -->
                     </div>
                     <div class="mb-6">
-                        <Label for="password" color={passwordLabelColour} class="mb-2">Password</Label>
-                        <Input color={passwordColor} bind:value={password} name="password" type="password"  placeholder="password" required on:input={()=>resetError()}/>
+                        <div class ="flex align-start">
+                            <Label for="password" color={passwordLabelColour} class="mb-2">Password</Label>
+                            <a href="/forgottenPassword" class="ms-auto text-sm text-primary-700 hover:underline dark:text-primary-500"> Forgotten password? </a>
+                        </div>
+
+                        <Input color={passwordColor} bind:value={password} name="password" type="password"  placeholder="•••••" required on:input={()=>resetError()}/>
                         <Helper class="mt-2" color="red">
                             <span class="font-medium">{passwordErrorMessage}</span>
                         </Helper>
+                       
                     </div>
-                    <div class="flex items-center justify-center mb-31">
-                        <Button type="submit">Sign-in</Button>
-                    </div>      
-                    
-                </form>
-            </Card>
-        </div>
+                    <Button type="submit" class="w-full mb-4">Login to your account</Button>
+                    <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
+                      Not registered? <a href="/signup" class="text-primary-700 hover:underline dark:text-primary-500"> Create account </a>
+                    </div>     
+            </form>
+    </Card>
+</div>
 {:else}
     <div class="formWrapper">  
         <Card class="mx-a">

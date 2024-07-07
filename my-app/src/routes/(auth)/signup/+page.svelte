@@ -131,22 +131,23 @@
             </div>
             <div class="mb-6">           
                 <Label color={passwordLabelColour} for="password" class="mb-2">Password</Label>
-                <Input color={passwordColor} bind:value={password} name="password" type="password" id="passwordError" placeholder="password" required on:input={()=>resetPassword()}/>
+                <Input color={passwordColor} bind:value={password} name="password" type="password" id="passwordError" placeholder="•••••" required on:input={()=>resetPassword()}/>
                 <Helper class="mt-2" color="red">
                     <span class="font-medium">{passwordErrorMessage}</span>
                 </Helper>
             </div>
             <div class="mb-6">
                 <Label color={passwordConfirmLabelColour} for="passwordConfirm" class="mb-2">Confirm password</Label>
-                <Input color={passwordConfirmColor} name = "passwordConfirm" type="password" id="passwordConfirm" placeholder="password" required on:input={()=>resetPasswordConfirm()}/>
+                <Input color={passwordConfirmColor} name = "passwordConfirm" type="password" id="passwordConfirm" placeholder="•••••" required on:input={()=>resetPasswordConfirm()}/>
                 <Helper class="mt-2" color="red">
                     <span class="font-medium">{passwordConfirmErrorMessage}</span>
                 </Helper>
             </div>         
-            <div class="flex items-center justify-center mb-31">
-                <Button type="submit">Sign-up</Button>
-            </div>      
-
+            <Button class="w-full mb-2" type="submit">Sign-up</Button>
+            
+            <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
+                Already have an account? <a href="/login" class="text-primary-700 hover:underline dark:text-primary-500"> Register account </a>
+              </div>    
         </form>
     </Card>
 </div>

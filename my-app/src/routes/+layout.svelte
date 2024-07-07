@@ -5,14 +5,14 @@
 
 export let data;
 
-let isLoggedIn = data.isValid;
+let loggedIn = data.isValid;
 
 </script>
-
-{#if !isLoggedIn}
-	<Navbar/>
+<Navbar {loggedIn}/>
+<!-- {#if !isLoggedIn}
+	
 {:else}
 	<StickyNavbar/>
-{/if}
+{/if} -->
 	
 <slot></slot>
